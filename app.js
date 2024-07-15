@@ -1,4 +1,4 @@
-// var arr = [1, 2, 5, 6, 7, 8, 9, 6, 3, 6];
+// var arr = [1, 2, 6, 5, 6, 7, 6, 8, 9, 6, 3, 6];
 
 // var firstIndex = arr.indexOf(6);
 // var foundElem = arr.slice(firstIndex + 1).find((e) => e === 6);
