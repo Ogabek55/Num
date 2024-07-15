@@ -1,54 +1,32 @@
-// function addValueToArray() {
-//   let userInput = prompt("Iltimos, qiymatni kiriting:");
-//   if (!isNaN(userInput)) {
-//     numbers.push(Number(userInput));
-//     console.log("Number ko'rinishidagi qiymat kiritildi:", numbers);
-//   } else {
-//     strings.push(userInput);
-//     console.log("String ko'rinishidagi qiymat kiritildi:", strings);
-//   }
-// }
-// let numbers = [];
-// let strings = [];
-// addValueToArray();
+// var arr = [1, 2, 5, 6, 7, 8, 9, 6, 3, 6];
 
-let myArray = ["salom1", "salom2", "salom3", "salom4", "salom5"];
-let method = prompt(
-  "Array methodini kiriting (masalan: 'push()', 'pop()', 'shift()', 'unshift()', 'reverse()' `join()`, `toString()`, `at()` )"
-);
-try {
-  let executeMethod = new Function(
-    "array",
-    `
-    let result = array.${method};
-        console.log("Metodning natijasi:", result);
-        console.log("O'zgartirilgan array:", array);
-    `
-  );
-  executeMethod(myArray);
-} catch (error) {
-  console.log("Xato: Noto'g'ri method kiritildi.");
+// var firstIndex = arr.indexOf(6);
+// var foundElem = arr.slice(firstIndex + 1).find((e) => e === 6);
+// var foundIndex =
+//   foundElem !== undefined ? arr.indexOf(foundElem, firstIndex + 1) : -1;
+
+// console.log(foundElem);
+// console.log(foundIndex);
+
+let soz = prompt("So'z kiriting:");
+let sozArray = soz.split(" ");
+let format = prompt("Format kiriting (a-z, z-a, 0-9, 9-0):");
+
+function sortArray(array, format) {
+  if (format === "a-z") {
+    return array.sort();
+  } else if (format === "z-a") {
+    return array.sort().reverse();
+  } else if (format === "0-9") {
+    return array.sort((a, b) => a - b);
+  } else if (format === "9-0") {
+    return array.sort((a, b) => b - a);
+  } else {
+    return array;
+  }
 }
+let sortedArray = sortArray(sozArray, format);
 
-// var arrLength = arr.length;
-// var arrToString = arr.toString();
-// var arrAt = arr.at(3);
-// var arrnum = arr[3];
-// var arrjoin = arr.join(" * ");
-// var arrpop = arr.pop();
-// var arrpush = arr.push("Salom6");
-// var arrshift = arr.shift();
-// var arrUnshift = arr.unshift("SAlom7");
-
-// console.log(arr);
-// console.log(arrLength);
-// console.log(arrToString);
-// console.log(arrAt);
-// console.log(arrnum);
-// console.log(arrjoin);
-// console.log(arrpop);
-// console.log(arrpush);
-// console.log(arr);
-// console.log(arrshift);
-// console.log(arrUnshift);
-// console.log(arr);
+console.log("Asl prompt: " + soz);
+console.log("Saralash turi: " + format);
+console.log("Saralangan natija: " + sortedArray.join(" "));
