@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Number Generator</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>Phone Number Generator</h1>
+    <label for="userNumber">O'z raqamingizni kiriting (+998xxxxxxxxx): </label>
+    <input type="text" id="userNumber" />
+    <button onclick="playGame()">Tekshirish</button>
+
+    <div id="step2" style="display: none">
+      <h2>Step 2: 0-300 oralig'ida 6 ta raqam kiriting</h2>
+      <label for="userNumbers"
+        >0-300 oralig'ida 6 ta raqam kiriting (vergul bilan ajratilgan):
+      </label>
+      <input type="text" id="userNumbers" />
+      <button onclick="checkNumbers()">Natijani tekshirish</button>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
